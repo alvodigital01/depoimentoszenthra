@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Depoimentos — Zentra Pharma</title>
+<title>Depoimentos — Zenthra Pharma</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500&display=swap');
 
@@ -14,18 +14,19 @@
 }
 
 :root {
-  --bg-base: #0B0F1A;
-  --bg-card: #08101d;
-  --bg-card-hover: #0d1626;
-  --navy-deep: #0E2A47;
-  --navy-mid: #153B63;
-  --accent-blue: #8FB7FF;
-  --border: rgba(255,255,255,0.09);
-  --border-hover: rgba(139,183,255,0.22);
-  --text-primary: #F0F4FC;
-  --text-muted: rgba(240,244,252,0.52);
-  --glow-soft: rgba(21,59,99,0.28);
-  --glow-strong: rgba(21,59,99,0.5);
+  --bg-base: #F6F8FC;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F9FBFE;
+  --navy-deep: #082B4B;
+  --navy-mid: #123A5F;
+  --accent-blue: #516780;
+  --accent-teal: #52BDB7;
+  --border: rgba(8,43,75,0.12);
+  --border-hover: rgba(8,43,75,0.24);
+  --text-primary: #07182D;
+  --text-muted: rgba(7,24,45,0.58);
+  --glow-soft: rgba(8,43,75,0.08);
+  --glow-strong: rgba(8,43,75,0.16);
 }
 
 *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
@@ -46,72 +47,96 @@ body {
   position: fixed;
   width: 16px;
   height: 16px;
-  background: rgba(139,183,255,0.55);
+  background: rgba(8,43,75,0.55);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
   top: 0; left: 0;
   transform: translate(-50%,-50%);
-  mix-blend-mode: screen;
+  mix-blend-mode: multiply;
   transition: width .2s ease, height .2s ease, background .2s ease;
   will-change: transform;
 }
 #cursor.big {
   width: 48px;
   height: 48px;
-  background: rgba(139,183,255,0.2);
+  background: rgba(82,189,183,0.18);
 }
 
 /* ── HEADER ── */
 header {
   position: fixed;
   inset: 0 0 auto 0;
-  height: 64px;
+  height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 48px;
-  background: rgba(8,16,29,0.82);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(139,183,255,0.10);
+  padding: 0 clamp(20px, 4vw, 56px);
+  background: rgba(247,249,252,0.94);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border-bottom: 1px solid rgba(8,43,75,0.10);
+  box-shadow: 0 12px 34px rgba(8,43,75,0.08);
   z-index: 800;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  text-decoration: none;
+}
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  padding: 4px;
+  border-radius: 12px;
+  background: #FFFFFF;
+  border: 1px solid rgba(8,43,75,0.10);
+  box-shadow: 0 12px 24px rgba(8,43,75,0.10);
+}
+.brand-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
 }
 .logo {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 22px;
-  background: linear-gradient(135deg, #4a90d9 0%, #8FB7FF 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: -.01em;
+  font-size: 20px;
+  color: var(--navy-deep);
+  letter-spacing: .04em;
+  line-height: 1;
 }
 .tagline {
   font-size: 10px;
-  letter-spacing: .28em;
+  letter-spacing: .34em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: rgba(7,24,45,0.46);
 }
 
 /* ── HERO ── */
 .hero {
   position: relative;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  justify-content: center;
+  gap: 48px;
   padding: 140px 40px 100px;
   overflow: hidden;
-  background: var(--bg-base);
+  background: linear-gradient(180deg, #F8FAFD 0%, var(--bg-base) 100%);
 }
 .hero-grid {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+    linear-gradient(rgba(8,43,75,.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(8,43,75,.055) 1px, transparent 1px);
   background-size: 120px 120px;
   animation: gridPulse 4s ease-in-out infinite;
   pointer-events: none;
@@ -127,7 +152,7 @@ header {
   width: 640px;
   height: 640px;
   border-radius: 50%;
-  background: radial-gradient(ellipse at center, rgba(21,59,99,.32), transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(82,189,183,.20), transparent 70%);
   filter: blur(160px);
   transform: translateX(-50%);
   animation: blobFloat 7s ease-in-out infinite;
@@ -150,8 +175,8 @@ header {
   gap: 8px;
   padding: 6px 18px;
   border-radius: 999px;
-  border: 1px solid rgba(139,183,255,.22);
-  background: rgba(139,183,255,.07);
+  border: 1px solid rgba(8,43,75,.12);
+  background: rgba(255,255,255,.78);
   color: var(--accent-blue);
   font-size: 11px;
   font-weight: 500;
@@ -168,7 +193,7 @@ header {
   margin-bottom: 6px;
 }
 .grad-text {
-  background: linear-gradient(135deg, #5090cc 0%, #8FB7FF 100%);
+  background: linear-gradient(135deg, var(--navy-deep) 0%, var(--accent-teal) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -176,7 +201,7 @@ header {
 .hero-sub {
   margin-top: 20px;
   font-size: 18px;
-  color: rgba(240,244,252,.55);
+  color: var(--text-muted);
   margin-bottom: 52px;
 }
 .counters {
@@ -186,12 +211,11 @@ header {
   flex-wrap: wrap;
 }
 .counter-card {
-  background: rgba(255,255,255,.04);
+  background: rgba(255,255,255,.86);
   border: 1px solid var(--border);
   border-radius: 24px;
   padding: 26px 36px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 18px 40px rgba(8,43,75,.08);
   text-align: center;
   min-width: 190px;
 }
@@ -230,7 +254,7 @@ header {
   width: 2px;
   height: 2px;
   border-radius: 50%;
-  background: #fff;
+  background: rgba(8,43,75,.24);
   animation: pfloat linear infinite;
   pointer-events: none;
   z-index: 1;
@@ -251,6 +275,7 @@ section { padding: 100px 48px; }
   text-transform: uppercase;
   color: var(--accent-blue);
   margin-bottom: 14px;
+  text-align: center;
 }
 .section-title {
   font-family: 'Montserrat', sans-serif;
@@ -258,6 +283,7 @@ section { padding: 100px 48px; }
   font-size: clamp(26px,3.8vw,42px);
   color: var(--text-primary);
   margin-bottom: 48px;
+  text-align: center;
 }
 
 /* ── REVEAL ── */
@@ -268,32 +294,6 @@ section { padding: 100px 48px; }
               transform .7s cubic-bezier(.22,1,.36,1);
 }
 .reveal.in { opacity:1; transform:translateY(0); }
-
-/* ── FILTER PILLS ── */
-.filter-pills {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 44px;
-}
-.pill {
-  padding: 9px 22px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 500;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,.04);
-  color: var(--text-muted);
-  cursor: pointer;
-  transition: all .28s ease;
-  font-family: 'Inter', sans-serif;
-}
-.pill:hover { border-color: var(--border-hover); color: var(--text-primary); }
-.pill.on {
-  background: linear-gradient(135deg, var(--navy-deep), var(--navy-mid));
-  border-color: rgba(139,183,255,.3);
-  color: var(--text-primary);
-}
 
 /* ── PHOTO SECTION ── */
 .sec-photos { background: var(--bg-base); }
@@ -308,6 +308,7 @@ section { padding: 100px 48px; }
   border-radius: 24px;
   border: 1px solid var(--border);
   background: var(--bg-card);
+  box-shadow: 0 18px 44px rgba(8,43,75,.08);
   overflow: hidden;
   cursor: pointer;
   transition: transform .35s cubic-bezier(.22,1,.36,1),
@@ -318,7 +319,7 @@ section { padding: 100px 48px; }
 .photo-card:hover {
   transform: translateY(-8px);
   border-color: var(--border-hover);
-  box-shadow: 0 24px 60px rgba(21,59,99,.38);
+  box-shadow: 0 24px 64px rgba(8,43,75,.14);
 }
 .card-head {
   display: flex;
@@ -343,9 +344,9 @@ section { padding: 100px 48px; }
   font-weight: 500;
   letter-spacing: .2em;
   text-transform: uppercase;
-  color: var(--accent-blue);
-  border: 1px solid rgba(139,183,255,.22);
-  background: rgba(139,183,255,.07);
+  color: #008A4C;
+  border: 1px solid rgba(82,189,183,.26);
+  background: rgba(82,189,183,.15);
   padding: 3px 9px;
   border-radius: 999px;
 }
@@ -353,7 +354,7 @@ section { padding: 100px 48px; }
 
 /* ── VIDEO SECTION ── */
 .sec-videos {
-  background: var(--bg-card);
+  background: #FFFFFF;
   position: relative;
   overflow: hidden;
 }
@@ -362,7 +363,7 @@ section { padding: 100px 48px; }
   left: -180px; top: 50%;
   width: 480px; height: 480px;
   border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(21,59,99,.26), transparent 70%);
+  background: radial-gradient(ellipse, rgba(82,189,183,.16), transparent 70%);
   filter: blur(120px);
   transform: translateY(-50%);
   pointer-events: none;
@@ -371,8 +372,8 @@ section { padding: 100px 48px; }
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+    linear-gradient(rgba(8,43,75,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(8,43,75,.035) 1px, transparent 1px);
   background-size: 80px 80px;
   pointer-events: none;
 }
@@ -390,7 +391,7 @@ section { padding: 100px 48px; }
   padding: 2px;
   background: conic-gradient(from var(--angle) at 50% 50%,
     transparent 0deg,
-    rgba(143,183,255,.7) 50deg,
+    rgba(82,189,183,.7) 50deg,
     transparent 100deg);
   animation: spinBorder 4s linear infinite;
 }
@@ -401,6 +402,7 @@ section { padding: 100px 48px; }
   border-radius: 32px;
   overflow: hidden;
   background: var(--bg-card-hover);
+  box-shadow: 0 18px 42px rgba(8,43,75,.12);
   aspect-ratio: 9/16;
   cursor: pointer;
   display: block;
@@ -428,7 +430,7 @@ section { padding: 100px 48px; }
 }
 .video-card:hover .play-btn {
   transform: scale(1.12);
-  box-shadow: 0 0 40px rgba(143,183,255,.38);
+  box-shadow: 0 0 40px rgba(82,189,183,.38);
 }
 .vid-badge {
   position: absolute;
@@ -436,9 +438,9 @@ section { padding: 100px 48px; }
   font-size: 10px;
   letter-spacing: .18em;
   text-transform: uppercase;
-  color: var(--text-primary);
-  background: rgba(143,183,255,.18);
-  border: 1px solid rgba(143,183,255,.28);
+  color: #FFFFFF;
+  background: rgba(8,43,75,.72);
+  border: 1px solid rgba(255,255,255,.24);
   padding: 4px 10px;
   border-radius: 999px;
   backdrop-filter: blur(8px);
@@ -449,101 +451,8 @@ section { padding: 100px 48px; }
   padding: 48px 18px 18px;
   background: linear-gradient(transparent, rgba(8,16,29,.88));
 }
-.vid-name { font-weight:600; font-size:14px; color:var(--text-primary); }
-.vid-product { font-size:12px; color:var(--text-muted); margin-top:2px; }
-
-/* ── CAROUSEL ── */
-.sec-carousel { background: var(--bg-base); overflow: hidden; }
-.carousel-wrap { position: relative; }
-.carousel-track {
-  display: flex;
-  gap: 22px;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  padding: 16px 4px 40px;
-  cursor: grab;
-  scrollbar-width: none;
-  user-select: none;
-}
-.carousel-track::-webkit-scrollbar { display: none; }
-.carousel-track.grabbing { cursor: grabbing; }
-
-.cc {
-  scroll-snap-align: start;
-  flex-shrink: 0;
-  width: 420px;
-  border-radius: 32px;
-  background: rgba(255,255,255,.04);
-  border: 1px solid var(--border);
-  backdrop-filter: blur(12px);
-  overflow: hidden;
-  transition: border-color .28s ease;
-}
-.cc:hover { border-color: var(--border-hover); }
-.cc-img { width:100%; height:220px; object-fit:cover; display:block; }
-.cc-body { padding: 22px; }
-.cc-stars { font-size:17px; margin-bottom:10px; }
-.cc-q-mark {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 72px;
-  line-height: .4;
-  color: var(--accent-blue);
-  opacity: .2;
-  display: block;
-  margin-bottom: 12px;
-}
-.cc-quote {
-  font-size: 14px;
-  line-height: 1.65;
-  color: var(--text-muted);
-  font-style: italic;
-  margin-bottom: 16px;
-}
-.cc-name { font-weight:600; font-size:13px; color:var(--text-primary); }
-.cc-tag { font-size:11px; color:var(--accent-blue); margin-top:2px; }
-
-.carousel-controls {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-top: 8px;
-}
-.caro-btn {
-  width: 48px; height: 48px;
-  border-radius: 50%;
-  background: rgba(255,255,255,.07);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--border);
-  color: var(--text-primary);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  transition: border-color .25s ease, background .25s ease;
-}
-.caro-btn:hover { border-color: var(--border-hover); background: rgba(143,183,255,.09); }
-.caro-btn::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,.10), transparent);
-  transform: translateX(-100%);
-  transition: transform .45s ease;
-}
-.caro-btn:hover::after { transform: translateX(100%); }
-.dots { display:flex; gap:7px; align-items:center; }
-.dot {
-  width: 7px; height: 7px;
-  border-radius: 999px;
-  background: var(--border);
-  cursor: pointer;
-  transition: all .28s ease;
-}
-.dot.on { width:22px; background:var(--accent-blue); }
+.vid-name { font-weight:600; font-size:14px; color:#FFFFFF; }
+.vid-product { font-size:12px; color:rgba(255,255,255,.72); margin-top:2px; }
 
 /* ── LIGHTBOX ── */
 .lb {
@@ -598,7 +507,7 @@ section { padding: 100px 48px; }
   z-index: 2;
   transition: background .2s ease, border-color .2s ease;
 }
-.lb-close:hover { background: rgba(143,183,255,.14); border-color: var(--border-hover); }
+.lb-close:hover { background: rgba(82,189,183,.18); border-color: rgba(82,189,183,.35); }
 .lb-nav {
   width: 44px; height: 44px;
   border-radius: 50%;
@@ -612,7 +521,7 @@ section { padding: 100px 48px; }
   flex-shrink: 0;
   transition: background .2s ease, border-color .2s ease;
 }
-.lb-nav:hover { background: rgba(143,183,255,.14); border-color: var(--border-hover); }
+.lb-nav:hover { background: rgba(82,189,183,.18); border-color: rgba(82,189,183,.35); }
 
 /* ── VIDEO MODAL ── */
 .vmod {
@@ -650,7 +559,7 @@ section { padding: 100px 48px; }
   font-size: 16px;
   transition: background .2s ease, border-color .2s ease;
 }
-.vmod-close:hover { background: rgba(143,183,255,.14); border-color: var(--border-hover); }
+.vmod-close:hover { background: rgba(82,189,183,.18); border-color: rgba(82,189,183,.35); }
 .vmod-frame {
   width: min(380px, 88vw);
   aspect-ratio: 9/16;
@@ -658,81 +567,60 @@ section { padding: 100px 48px; }
   overflow: hidden;
   animation: lbIn .35s cubic-bezier(.22,1,.36,1);
 }
-.vmod-frame iframe { width:100%; height:100%; border:none; display:block; }
-
-/* ── CTA ── */
-.sec-cta {
-  background: linear-gradient(180deg, var(--bg-base) 0%, var(--bg-card) 100%);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.cta-blob {
-  position: absolute;
-  top: 50%; left: 50%;
-  width: 700px; height: 700px;
-  border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(21,59,99,.24), transparent 70%);
-  filter: blur(160px);
-  transform: translate(-50%,-50%);
-  pointer-events: none;
-}
-.sec-cta h2 {
-  position: relative; z-index:1;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: clamp(26px,4vw,50px);
-  color: var(--text-primary);
-  line-height: 1.15;
-  margin-bottom: 16px;
-}
-.cta-sub {
-  position: relative; z-index:1;
-  font-size: 16px;
-  color: var(--text-muted);
-  margin-bottom: 42px;
-}
-.cta-btn {
-  position: relative; z-index:1;
-  display: inline-block;
-  padding: 16px 42px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, var(--navy-deep), var(--navy-mid));
-  border: 1px solid rgba(94,136,180,.28);
-  color: var(--text-primary);
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  cursor: pointer;
-  text-decoration: none;
-  overflow: hidden;
-  transition: transform .2s ease, box-shadow .2s ease;
-  animation: ctaPulse 2.6s ease-in-out infinite;
-}
-@keyframes ctaPulse {
-  0%,100% { box-shadow: 0 0 0 0 rgba(143,183,255,0); }
-  45%     { box-shadow: 0 0 28px 6px rgba(143,183,255,.16); }
-}
-.cta-btn::after {
-  content:'';
-  position:absolute;
-  inset:0;
-  background: linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);
-  transform: translateX(-100%);
-  transition: transform .55s ease;
-}
-.cta-btn:hover::after { transform:translateX(100%); }
-.cta-btn:hover { transform:translateY(-2px); box-shadow: 0 18px 44px rgba(21,59,99,.45); }
+.vmod-frame iframe,
+.vmod-frame video { width:100%; height:100%; border:none; display:block; background:#000; }
 
 /* ── FOOTER ── */
 footer {
-  background: #06080F;
-  border-top: 1px solid rgba(255,255,255,.06);
+  background: #0B1322;
+  border-top: 1px solid rgba(255,255,255,.10);
   padding: 28px 48px;
   text-align: center;
   font-size: 13px;
-  color: var(--text-muted);
+  color: rgba(255,255,255,.72);
 }
+
+/* ── MOCK CHAT ── */
+.mock-chat {
+  background: #EFEAE2;
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.cb {
+  max-width: 82%;
+  padding: 7px 10px 4px;
+  border-radius: 10px;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: #111B21;
+  position: relative;
+  word-break: break-word;
+  box-shadow: 0 1px 1px rgba(11,20,26,.08);
+}
+.cb.r { background: #FFFFFF; align-self: flex-start; border-bottom-left-radius: 2px; }
+.cb.s { background: #D9FDD3; align-self: flex-end; border-bottom-right-radius: 2px; }
+.ct { font-size: 9.5px; color: #667781; text-align: right; margin-top: 3px; }
+.cb.s .ct { color: #667781; }
+.chat-photo {
+  max-width: 78%;
+  padding: 4px;
+  border-radius: 12px;
+  background: #FFFFFF;
+  align-self: flex-start;
+  border-bottom-left-radius: 2px;
+  box-shadow: 0 1px 1px rgba(11,20,26,.08);
+}
+.chat-photo img {
+  display: block;
+  width: 100%;
+  max-height: 260px;
+  object-fit: contain;
+  background: #F7F7F7;
+  border-radius: 9px;
+}
+.chat-photo .ct { padding-right: 3px; }
 
 /* ── RESPONSIVE ── */
 @media(max-width:1024px){
@@ -742,15 +630,17 @@ footer {
 @media(max-width:768px){
   body { cursor:auto; }
   #cursor { display:none; }
-  header { padding:0 20px; }
+  header { height:64px; padding:0 16px; }
+  .brand { gap:9px; }
+  .brand-mark { width:34px; height:34px; border-radius:10px; }
+  .brand-logo { border-radius:7px; }
+  .logo { font-size:16px; }
   .tagline { display:none; }
   section { padding:80px 20px; }
   .hero { padding:110px 20px 80px; }
   .photo-grid { columns:1; }
   .video-grid { grid-template-columns:1fr; }
-  .cc { width:82vw; }
   .lb-nav { display:none; }
-  .caro-btn { width:40px; height:40px; }
 }
 </style>
 </head>
@@ -760,7 +650,12 @@ footer {
 
 <!-- HEADER -->
 <header>
-  <span class="logo">Zentra</span>
+  <a class="brand" href="#hero" aria-label="Zenthra Pharma">
+    <span class="brand-mark">
+      <img class="brand-logo" src="logozenthra.PNG" alt="">
+    </span>
+    <span class="logo">Zenthra Pharma</span>
+  </a>
   <span class="tagline">Resultados que falam por si</span>
 </header>
 
@@ -799,12 +694,6 @@ footer {
   <p class="eyebrow reveal">DEPOIMENTOS • FOTOS</p>
   <h2 class="section-title reveal">Prints reais, resultados reais.</h2>
 
-  <div class="filter-pills reveal">
-    <button class="pill on" data-filter="todos">Todos</button>
-    <button class="pill" data-filter="whatsapp">WhatsApp</button>
-    <button class="pill" data-filter="resultados">Resultados</button>
-  </div>
-
   <div class="photo-grid" id="photoGrid">
 
     <div class="photo-card reveal" data-cat="whatsapp">
@@ -813,7 +702,16 @@ footer {
         <span class="app-name">WhatsApp</span>
         <span class="app-time">09:14</span>
       </div>
-      <img src="https://placehold.co/400x560/08101d/8FB7FF?text=Depoimento+01" alt="Depoimento WhatsApp 1" loading="lazy">
+      <div class="mock-chat">
+        <div class="cb r">Aissa, chegou agora aqui em casa<div class="ct">09:11</div></div>
+        <div class="cb r">Confesso que fiquei com medo no começo, mas veio tudo certinho<div class="ct">09:12</div></div>
+        <div class="chat-photo">
+          <img src="dep1.png" alt="Foto enviada pela cliente mostrando o produto recebido" loading="lazy">
+          <div class="ct">09:12</div>
+        </div>
+        <div class="cb s">Que bom! Veio lacrado e protegido direitinho?<div class="ct">09:13 ✓✓</div></div>
+        <div class="cb r">Sim, lacrado e discreto. Agora fiquei bem mais tranquila pra comprar de novo<div class="ct">09:14</div></div>
+      </div>
       <div class="card-foot">
         <span class="tag-sm">Depoimento real</span>
         <span class="card-date">há 2 dias</span>
@@ -826,7 +724,16 @@ footer {
         <span class="app-name">WhatsApp</span>
         <span class="app-time">14:32</span>
       </div>
-      <img src="https://placehold.co/400x480/0d1626/8FB7FF?text=Depoimento+02" alt="Depoimento WhatsApp 2" loading="lazy">
+      <div class="mock-chat">
+        <div class="cb r">Aissa, passando só pra agradecer<div class="ct">14:29</div></div>
+        <div class="cb r">Você explicou tudo certinho e minha compra chegou antes do prazo, bem segura<div class="ct">14:30</div></div>
+        <div class="chat-photo">
+          <img src="dep6.png" alt="Foto enviada pela cliente mostrando o pacote recebido" loading="lazy">
+          <div class="ct">14:30</div>
+        </div>
+        <div class="cb s">Fico feliz demais! Qualquer dúvida me chama por aqui<div class="ct">14:31 ✓✓</div></div>
+        <div class="cb r">Pode deixar. Veio discreto e com rastreio certinho, isso passa muita confiança<div class="ct">14:32</div></div>
+      </div>
       <div class="card-foot">
         <span class="tag-sm">Depoimento real</span>
         <span class="card-date">há 1 semana</span>
@@ -839,7 +746,16 @@ footer {
         <span class="app-name">WhatsApp</span>
         <span class="app-time">11:05</span>
       </div>
-      <img src="https://placehold.co/400x640/08101d/8FB7FF?text=Resultado+01" alt="Resultado real 3" loading="lazy">
+      <div class="mock-chat">
+        <div class="cb r">Aissa, boa tarde! Vim contar como foi meu primeiro mês<div class="ct">11:02</div></div>
+        <div class="cb r">Segui do jeito que você explicou e a balança finalmente começou a baixar<div class="ct">11:03</div></div>
+        <div class="chat-photo">
+          <img src="dep8.png" alt="Foto enviada pela cliente mostrando os produtos recebidos" loading="lazy">
+          <div class="ct">11:03</div>
+        </div>
+        <div class="cb s">Que noticia boa! Obrigada por voltar pra me contar<div class="ct">11:04 ✓✓</div></div>
+        <div class="cb r">Além do resultado, gostei porque chegou tudo lacrado e conferido<div class="ct">11:05</div></div>
+      </div>
       <div class="card-foot">
         <span class="tag-sm">Resultado real</span>
         <span class="card-date">há 3 dias</span>
@@ -852,7 +768,16 @@ footer {
         <span class="app-name">WhatsApp</span>
         <span class="app-time">16:47</span>
       </div>
-      <img src="https://placehold.co/400x500/0d1626/8FB7FF?text=Depoimento+04" alt="Depoimento WhatsApp 4" loading="lazy">
+      <div class="mock-chat">
+        <div class="cb r">Oi, Aissa! Minha encomenda acabou de chegar<div class="ct">16:44</div></div>
+        <div class="cb s">Oi! Conseguiu conferir o pacote?<div class="ct">16:45 ✓✓</div></div>
+        <div class="chat-photo">
+          <img src="dep2.png" alt="Foto enviada pela cliente mostrando a caixa de entrega aberta" loading="lazy">
+          <div class="ct">16:45</div>
+        </div>
+        <div class="cb r">Sim, veio tudo na caixa, bem protegido e sem chamar atenção<div class="ct">16:46</div></div>
+        <div class="cb r">Entrega rápida mesmo. Obrigada por acompanhar até chegar<div class="ct">16:47</div></div>
+      </div>
       <div class="card-foot">
         <span class="tag-sm">Depoimento real</span>
         <span class="card-date">há 5 dias</span>
@@ -865,7 +790,17 @@ footer {
         <span class="app-name">WhatsApp</span>
         <span class="app-time">08:22</span>
       </div>
-      <img src="https://placehold.co/400x580/08101d/8FB7FF?text=Depoimento+05" alt="Depoimento WhatsApp 5" loading="lazy">
+      <div class="mock-chat">
+        <div class="cb r">Bom dia, Aissa<div class="ct">08:18</div></div>
+        <div class="cb r">Essa já é minha terceira compra com vocês, estou mantendo meu peso bem melhor<div class="ct">08:19</div></div>
+        <div class="chat-photo">
+          <img src="dep7.png" alt="Foto enviada pela cliente mostrando pacote entregue" loading="lazy">
+          <div class="ct">08:19</div>
+        </div>
+        <div class="cb s">Bom dia! Que alegria saber disso<div class="ct">08:20 ✓✓</div></div>
+        <div class="cb r">Voltei pelo resultado, mas também porque a entrega é segura mesmo<div class="ct">08:21</div></div>
+        <div class="cb r">Vou continuar pedindo por aqui<div class="ct">08:22</div></div>
+      </div>
       <div class="card-foot">
         <span class="tag-sm">Depoimento real</span>
         <span class="card-date">há 2 semanas</span>
@@ -878,7 +813,16 @@ footer {
         <span class="app-name">WhatsApp</span>
         <span class="app-time">19:03</span>
       </div>
-      <img src="https://placehold.co/400x520/0d1626/8FB7FF?text=Depoimento+06" alt="Depoimento WhatsApp 6" loading="lazy">
+      <div class="mock-chat">
+        <div class="cb r">Aissa, vim te atualizar<div class="ct">18:59</div></div>
+        <div class="cb r">Com duas semanas já percebi uma diferença bem visível nas roupas<div class="ct">19:00</div></div>
+        <div class="chat-photo">
+          <img src="dep10.png" alt="Foto enviada pela cliente mostrando produto em mãos" loading="lazy">
+          <div class="ct">19:00</div>
+        </div>
+        <div class="cb s">Nossa, que bom! Você seguiu certinho as orientações?<div class="ct">19:02 ✓✓</div></div>
+        <div class="cb r">Segui sim. E chegou lacrado, do jeitinho que você falou<div class="ct">19:03</div></div>
+      </div>
       <div class="card-foot">
         <span class="tag-sm">Depoimento real</span>
         <span class="card-date">há 1 dia</span>
@@ -891,7 +835,16 @@ footer {
         <span class="app-name">WhatsApp</span>
         <span class="app-time">13:55</span>
       </div>
-      <img src="https://placehold.co/400x610/08101d/8FB7FF?text=Depoimento+07" alt="Depoimento WhatsApp 7" loading="lazy">
+      <div class="mock-chat">
+        <div class="cb r">Aissa, posso te mandar um feedback?<div class="ct">13:51</div></div>
+        <div class="cb r">Em 10 dias já senti menos fome e uma mudança que eu não esperava<div class="ct">13:52</div></div>
+        <div class="chat-photo">
+          <img src="dep11.png" alt="Foto enviada pela cliente mostrando caixa do produto recebida" loading="lazy">
+          <div class="ct">13:52</div>
+        </div>
+        <div class="cb s">Claro! Fico muito feliz que tenha dado certo pra você<div class="ct">13:54 ✓✓</div></div>
+        <div class="cb r">Obrigada por indicar e por mandar tudo tão bem embalado<div class="ct">13:55</div></div>
+      </div>
       <div class="card-foot">
         <span class="tag-sm">Depoimento real</span>
         <span class="card-date">há 4 dias</span>
@@ -904,10 +857,175 @@ footer {
         <span class="app-name">WhatsApp</span>
         <span class="app-time">07:38</span>
       </div>
-      <img src="https://placehold.co/400x490/0d1626/8FB7FF?text=Resultado+03" alt="Resultado real 8" loading="lazy">
+      <div class="mock-chat">
+        <div class="cb r">Aissa, lembra que eu estava com medo do envio?<div class="ct">07:33</div></div>
+        <div class="cb r">Chegou agora tudo certinho. Veio bem embalado, lacrado e discreto<div class="ct">07:34</div></div>
+        <div class="chat-photo">
+          <img src="dep9.png" alt="Foto enviada pela cliente mostrando caixas do produto recebidas" loading="lazy">
+          <div class="ct">07:35</div>
+        </div>
+        <div class="cb s">Lembro sim! Fico feliz que tenha chegado tudo em segurança<div class="ct">07:36 ✓✓</div></div>
+        <div class="cb r">Pode confiar, chegou rápido e sem dor de cabeça. Obrigada pela atenção<div class="ct">07:38</div></div>
+      </div>
+      <div class="card-foot">
+        <span class="tag-sm">Recebimento confirmado</span>
+        <span class="card-date">há 3 semanas</span>
+      </div>
+    </div>
+
+    <div class="photo-card reveal" data-cat="whatsapp">
+      <div class="card-head">
+        <svg class="app-icon" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#0d2210"/><path d="M12 3C7.03 3 3 7.03 3 12c0 1.62.44 3.15 1.2 4.46L3 21l4.66-1.18C8.89 20.58 10.41 21 12 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm4.56 12.44c-.19.52-1.12 1-.1.54-.41.04-.42.31-2.67-.57-2.24-.87-3.63-3.14-3.74-3.29-.11-.15-.89-1.18-.89-2.27s.56-1.61.77-1.82c.2-.22.44-.27.58-.27.14 0 .29 0 .42.01.13.01.31-.05.49.38.17.42.61 1.5.66 1.61.05.11.08.24.01.39-.08.15-.11.24-.23.37-.11.13-.23.29-.34.38-.11.1-.23.22-.09.43.13.21.57.95 1.23 1.55.85.76 1.56 1 1.78 1.11.22.11.34.09.47-.06.13-.16.54-.63.68-.85.14-.22.28-.18.48-.11.19.07 1.24.58 1.45.69.21.1.35.16.4.24.05.09.05.51-.14 1.03z" fill="#25D366"/></svg>
+        <span class="app-name">WhatsApp</span>
+        <span class="app-time">10:18</span>
+      </div>
+      <div class="mock-chat">
+        <div class="cb r">Aissa, chegou tudo certinho aqui<div class="ct">10:14</div></div>
+        <div class="cb r">Mandei foto pra você ver, veio tudo separado e bem protegido<div class="ct">10:15</div></div>
+        <div class="chat-photo">
+          <img src="dep3.png" alt="Foto enviada pela cliente mostrando o kit recebido" loading="lazy">
+          <div class="ct">10:15</div>
+        </div>
+        <div class="cb s">Perfeito! Fico feliz que tenha recebido tudo direitinho<div class="ct">10:16 ✓✓</div></div>
+        <div class="cb r">Gostei muito da segurança no envio. Pode deixar meu cadastro salvo<div class="ct">10:18</div></div>
+      </div>
+      <div class="card-foot">
+        <span class="tag-sm">Depoimento real</span>
+        <span class="card-date">há 6 horas</span>
+      </div>
+    </div>
+
+    <div class="photo-card reveal" data-cat="resultados">
+      <div class="card-head">
+        <svg class="app-icon" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#0d2210"/><path d="M12 3C7.03 3 3 7.03 3 12c0 1.62.44 3.15 1.2 4.46L3 21l4.66-1.18C8.89 20.58 10.41 21 12 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm4.56 12.44c-.19.52-1.12 1-.1.54-.41.04-.42.31-2.67-.57-2.24-.87-3.63-3.14-3.74-3.29-.11-.15-.89-1.18-.89-2.27s.56-1.61.77-1.82c.2-.22.44-.27.58-.27.14 0 .29 0 .42.01.13.01.31-.05.49.38.17.42.61 1.5.66 1.61.05.11.08.24.01.39-.08.15-.11.24-.23.37-.11.13-.23.29-.34.38-.11.1-.23.22-.09.43.13.21.57.95 1.23 1.55.85.76 1.56 1 1.78 1.11.22.11.34.09.47-.06.13-.16.54-.63.68-.85.14-.22.28-.18.48-.11.19.07 1.24.58 1.45.69.21.1.35.16.4.24.05.09.05.51-.14 1.03z" fill="#25D366"/></svg>
+        <span class="app-name">WhatsApp</span>
+        <span class="app-time">15:42</span>
+      </div>
+      <div class="mock-chat">
+        <div class="cb r">Aissa, voltei com meu feedback de 20 dias<div class="ct">15:38</div></div>
+        <div class="cb r">A diferença foi maior do que eu esperava, principalmente no inchaço<div class="ct">15:39</div></div>
+        <div class="cb s">Que bom receber esse retorno. Posso te orientar na continuidade<div class="ct">15:40 ✓✓</div></div>
+        <div class="cb r">Quero sim. Vou seguir com você até chegar na minha meta<div class="ct">15:42</div></div>
+      </div>
       <div class="card-foot">
         <span class="tag-sm">Resultado real</span>
-        <span class="card-date">há 3 semanas</span>
+        <span class="card-date">há 2 dias</span>
+      </div>
+    </div>
+
+    <div class="photo-card reveal" data-cat="whatsapp">
+      <div class="card-head">
+        <svg class="app-icon" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#0d2210"/><path d="M12 3C7.03 3 3 7.03 3 12c0 1.62.44 3.15 1.2 4.46L3 21l4.66-1.18C8.89 20.58 10.41 21 12 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm4.56 12.44c-.19.52-1.12 1-.1.54-.41.04-.42.31-2.67-.57-2.24-.87-3.63-3.14-3.74-3.29-.11-.15-.89-1.18-.89-2.27s.56-1.61.77-1.82c.2-.22.44-.27.58-.27.14 0 .29 0 .42.01.13.01.31-.05.49.38.17.42.61 1.5.66 1.61.05.11.08.24.01.39-.08.15-.11.24-.23.37-.11.13-.23.29-.34.38-.11.1-.23.22-.09.43.13.21.57.95 1.23 1.55.85.76 1.56 1 1.78 1.11.22.11.34.09.47-.06.13-.16.54-.63.68-.85.14-.22.28-.18.48-.11.19.07 1.24.58 1.45.69.21.1.35.16.4.24.05.09.05.51-.14 1.03z" fill="#25D366"/></svg>
+        <span class="app-name">WhatsApp</span>
+        <span class="app-time">20:09</span>
+      </div>
+      <div class="mock-chat">
+        <div class="cb r">Aissa, seu atendimento foi excelente<div class="ct">20:04</div></div>
+        <div class="cb r">Eu tinha várias dúvidas sobre o uso e você respondeu tudo sem pressa<div class="ct">20:05</div></div>
+        <div class="chat-photo">
+          <img src="dep4.png" alt="Foto enviada pela cliente mostrando caixa de entrega aberta" loading="lazy">
+          <div class="ct">20:06</div>
+        </div>
+        <div class="cb s">Fico feliz em ajudar. Sempre que precisar, me chama<div class="ct">20:07 ✓✓</div></div>
+        <div class="cb r">Já passei seu contato pra duas amigas. Elas ficaram mais seguras vendo a entrega<div class="ct">20:09</div></div>
+      </div>
+      <div class="card-foot">
+        <span class="tag-sm">Depoimento real</span>
+        <span class="card-date">há 4 dias</span>
+      </div>
+    </div>
+
+    <div class="photo-card reveal" data-cat="resultados">
+      <div class="card-head">
+        <svg class="app-icon" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#0d2210"/><path d="M12 3C7.03 3 3 7.03 3 12c0 1.62.44 3.15 1.2 4.46L3 21l4.66-1.18C8.89 20.58 10.41 21 12 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm4.56 12.44c-.19.52-1.12 1-.1.54-.41.04-.42.31-2.67-.57-2.24-.87-3.63-3.14-3.74-3.29-.11-.15-.89-1.18-.89-2.27s.56-1.61.77-1.82c.2-.22.44-.27.58-.27.14 0 .29 0 .42.01.13.01.31-.05.49.38.17.42.61 1.5.66 1.61.05.11.08.24.01.39-.08.15-.11.24-.23.37-.11.13-.23.29-.34.38-.11.1-.23.22-.09.43.13.21.57.95 1.23 1.55.85.76 1.56 1 1.78 1.11.22.11.34.09.47-.06.13-.16.54-.63.68-.85.14-.22.28-.18.48-.11.19.07 1.24.58 1.45.69.21.1.35.16.4.24.05.09.05.51-.14 1.03z" fill="#25D366"/></svg>
+        <span class="app-name">WhatsApp</span>
+        <span class="app-time">12:27</span>
+      </div>
+      <div class="mock-chat">
+        <div class="cb r">Aissa, confesso que eu estava com receio<div class="ct">12:22</div></div>
+        <div class="cb r">Mas você me explicou tudo direitinho e eu resolvi testar pra emagrecer com acompanhamento<div class="ct">12:23</div></div>
+        <div class="chat-photo">
+          <img src="dep5.png" alt="Foto enviada pela cliente mostrando produto protegido na caixa" loading="lazy">
+          <div class="ct">12:24</div>
+        </div>
+        <div class="cb s">Sim, lembro da nossa conversa. Como você está se sentindo?<div class="ct">12:25 ✓✓</div></div>
+        <div class="cb r">Bem melhor. E a entrega veio muito protegida, isso me deixou tranquila<div class="ct">12:27</div></div>
+      </div>
+      <div class="card-foot">
+        <span class="tag-sm">Resultado real</span>
+        <span class="card-date">há 1 semana</span>
+      </div>
+    </div>
+
+    <div class="photo-card reveal" data-cat="whatsapp">
+      <div class="card-head">
+        <svg class="app-icon" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#0d2210"/><path d="M12 3C7.03 3 3 7.03 3 12c0 1.62.44 3.15 1.2 4.46L3 21l4.66-1.18C8.89 20.58 10.41 21 12 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm4.56 12.44c-.19.52-1.12 1-.1.54-.41.04-.42.31-2.67-.57-2.24-.87-3.63-3.14-3.74-3.29-.11-.15-.89-1.18-.89-2.27s.56-1.61.77-1.82c.2-.22.44-.27.58-.27.14 0 .29 0 .42.01.13.01.31-.05.49.38.17.42.61 1.5.66 1.61.05.11.08.24.01.39-.08.15-.11.24-.23.37-.11.13-.23.29-.34.38-.11.1-.23.22-.09.43.13.21.57.95 1.23 1.55.85.76 1.56 1 1.78 1.11.22.11.34.09.47-.06.13-.16.54-.63.68-.85.14-.22.28-.18.48-.11.19.07 1.24.58 1.45.69.21.1.35.16.4.24.05.09.05.51-.14 1.03z" fill="#25D366"/></svg>
+        <span class="app-name">WhatsApp</span>
+        <span class="app-time">08:51</span>
+      </div>
+      <div class="mock-chat">
+        <div class="cb r">Bom dia, Aissa. Recebi meu pedido ontem<div class="ct">08:47</div></div>
+        <div class="cb r">Foi minha primeira compra e gostei bastante da experiência. Chegou super rápido<div class="ct">08:48</div></div>
+        <div class="cb s">Bom dia! Que bom saber. Deu tudo certo com o uso?<div class="ct">08:50 ✓✓</div></div>
+        <div class="cb r">Sim, comecei hoje. Obrigada pelo suporte<div class="ct">08:51</div></div>
+      </div>
+      <div class="card-foot">
+        <span class="tag-sm">Depoimento real</span>
+        <span class="card-date">há 5 dias</span>
+      </div>
+    </div>
+
+    <div class="photo-card reveal" data-cat="resultados">
+      <div class="card-head">
+        <svg class="app-icon" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#0d2210"/><path d="M12 3C7.03 3 3 7.03 3 12c0 1.62.44 3.15 1.2 4.46L3 21l4.66-1.18C8.89 20.58 10.41 21 12 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm4.56 12.44c-.19.52-1.12 1-.1.54-.41.04-.42.31-2.67-.57-2.24-.87-3.63-3.14-3.74-3.29-.11-.15-.89-1.18-.89-2.27s.56-1.61.77-1.82c.2-.22.44-.27.58-.27.14 0 .29 0 .42.01.13.01.31-.05.49.38.17.42.61 1.5.66 1.61.05.11.08.24.01.39-.08.15-.11.24-.23.37-.11.13-.23.29-.34.38-.11.1-.23.22-.09.43.13.21.57.95 1.23 1.55.85.76 1.56 1 1.78 1.11.22.11.34.09.47-.06.13-.16.54-.63.68-.85.14-.22.28-.18.48-.11.19.07 1.24.58 1.45.69.21.1.35.16.4.24.05.09.05.51-.14 1.03z" fill="#25D366"/></svg>
+        <span class="app-name">WhatsApp</span>
+        <span class="app-time">17:36</span>
+      </div>
+      <div class="mock-chat">
+        <div class="cb r">Aissa, atualizando você: estou gostando muito do resultado na perda de peso<div class="ct">17:31</div></div>
+        <div class="cb r">Minha rotina melhorou bastante depois que comecei, principalmente a fome à noite<div class="ct">17:32</div></div>
+        <div class="cb s">Que ótimo! Vamos manter o acompanhamento, combinado?<div class="ct">17:34 ✓✓</div></div>
+        <div class="cb r">Combinado. Obrigada por cuidar de tudo<div class="ct">17:36</div></div>
+      </div>
+      <div class="card-foot">
+        <span class="tag-sm">Resultado real</span>
+        <span class="card-date">há 2 semanas</span>
+      </div>
+    </div>
+
+    <div class="photo-card reveal" data-cat="whatsapp">
+      <div class="card-head">
+        <svg class="app-icon" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#0d2210"/><path d="M12 3C7.03 3 3 7.03 3 12c0 1.62.44 3.15 1.2 4.46L3 21l4.66-1.18C8.89 20.58 10.41 21 12 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm4.56 12.44c-.19.52-1.12 1-.1.54-.41.04-.42.31-2.67-.57-2.24-.87-3.63-3.14-3.74-3.29-.11-.15-.89-1.18-.89-2.27s.56-1.61.77-1.82c.2-.22.44-.27.58-.27.14 0 .29 0 .42.01.13.01.31-.05.49.38.17.42.61 1.5.66 1.61.05.11.08.24.01.39-.08.15-.11.24-.23.37-.11.13-.23.29-.34.38-.11.1-.23.22-.09.43.13.21.57.95 1.23 1.55.85.76 1.56 1 1.78 1.11.22.11.34.09.47-.06.13-.16.54-.63.68-.85.14-.22.28-.18.48-.11.19.07 1.24.58 1.45.69.21.1.35.16.4.24.05.09.05.51-.14 1.03z" fill="#25D366"/></svg>
+        <span class="app-name">WhatsApp</span>
+        <span class="app-time">09:26</span>
+      </div>
+      <div class="mock-chat">
+        <div class="cb r">Aissa, meu pedido chegou hoje cedo<div class="ct">09:21</div></div>
+        <div class="cb r">Veio tudo lacrado, bem protegido e do jeitinho que você explicou<div class="ct">09:22</div></div>
+        <div class="cb s">Que bom! Obrigada por me avisar. Deu tudo certo para conferir?<div class="ct">09:24 ✓✓</div></div>
+        <div class="cb r">Sim, conferi agora. Compra muito tranquila, obrigada pela atenção<div class="ct">09:26</div></div>
+      </div>
+      <div class="card-foot">
+        <span class="tag-sm">Recebimento confirmado</span>
+        <span class="card-date">há 4 dias</span>
+      </div>
+    </div>
+
+    <div class="photo-card reveal" data-cat="whatsapp">
+      <div class="card-head">
+        <svg class="app-icon" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#0d2210"/><path d="M12 3C7.03 3 3 7.03 3 12c0 1.62.44 3.15 1.2 4.46L3 21l4.66-1.18C8.89 20.58 10.41 21 12 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm4.56 12.44c-.19.52-1.12 1-.1.54-.41.04-.42.31-2.67-.57-2.24-.87-3.63-3.14-3.74-3.29-.11-.15-.89-1.18-.89-2.27s.56-1.61.77-1.82c.2-.22.44-.27.58-.27.14 0 .29 0 .42.01.13.01.31-.05.49.38.17.42.61 1.5.66 1.61.05.11.08.24.01.39-.08.15-.11.24-.23.37-.11.13-.23.29-.34.38-.11.1-.23.22-.09.43.13.21.57.95 1.23 1.55.85.76 1.56 1 1.78 1.11.22.11.34.09.47-.06.13-.16.54-.63.68-.85.14-.22.28-.18.48-.11.19.07 1.24.58 1.45.69.21.1.35.16.4.24.05.09.05.51-.14 1.03z" fill="#25D366"/></svg>
+        <span class="app-name">WhatsApp</span>
+        <span class="app-time">19:13</span>
+      </div>
+      <div class="mock-chat">
+        <div class="cb r">Aissa, passando para agradecer pelo cuidado<div class="ct">19:08</div></div>
+        <div class="cb r">Eu tinha receio de comprar pela internet, mas você explicou tudo com calma<div class="ct">19:09</div></div>
+        <div class="cb s">Fico feliz em saber. A ideia é você se sentir segura do começo ao fim<div class="ct">19:11 ✓✓</div></div>
+        <div class="cb r">Foi exatamente isso. Atendimento ótimo e entrega rápida, virei cliente<div class="ct">19:13</div></div>
+      </div>
+      <div class="card-foot">
+        <span class="tag-sm">Compra segura</span>
+        <span class="card-date">há 6 dias</span>
       </div>
     </div>
 
@@ -925,192 +1043,43 @@ footer {
   <div class="video-grid">
 
     <div class="vw reveal">
-      <div class="video-card" data-vid="dQw4w9WgXcQ">
-        <img class="vid-thumb" src="https://placehold.co/360x640/0d1626/8FB7FF?text=Vídeo+01" alt="Vídeo depoimento 1" loading="lazy">
+      <div class="video-card" data-src="video1.mp4">
+        <video class="vid-thumb" src="video1.mp4" muted playsinline preload="metadata"></video>
         <div class="vid-overlay">
-          <button class="play-btn" aria-label="Reproduzir depoimento de Ana Lima">
+          <button class="play-btn" aria-label="Reproduzir depoimento em vídeo 1">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="#F0F4FC"><polygon points="5,3 19,12 5,21"/></svg>
           </button>
         </div>
-        <span class="vid-badge">▶ Vídeo</span>
+        <span class="vid-badge">▶ Vídeo real</span>
         <div class="vid-info">
-          <div class="vid-name">Ana Lima</div>
-          <div class="vid-product">Produto A · Cliente há 3 meses</div>
+          <div class="vid-name">Depoimento de cliente</div>
+          <div class="vid-product">Recebimento e confiança na compra</div>
         </div>
       </div>
     </div>
 
     <div class="vw reveal">
-      <div class="video-card" data-vid="dQw4w9WgXcQ">
-        <img class="vid-thumb" src="https://placehold.co/360x640/08101d/8FB7FF?text=Vídeo+02" alt="Vídeo depoimento 2" loading="lazy">
+      <div class="video-card" data-src="video2.mp4">
+        <video class="vid-thumb" src="video2.mp4" muted playsinline preload="metadata"></video>
         <div class="vid-overlay">
-          <button class="play-btn" aria-label="Reproduzir depoimento de Carlos Souza">
+          <button class="play-btn" aria-label="Reproduzir depoimento em vídeo 2">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="#F0F4FC"><polygon points="5,3 19,12 5,21"/></svg>
           </button>
         </div>
-        <span class="vid-badge">▶ Vídeo</span>
+        <span class="vid-badge">▶ Vídeo real</span>
         <div class="vid-info">
-          <div class="vid-name">Carlos Souza</div>
-          <div class="vid-product">Produto B · Cliente há 6 meses</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="vw reveal">
-      <div class="video-card" data-vid="dQw4w9WgXcQ">
-        <img class="vid-thumb" src="https://placehold.co/360x640/0d1626/8FB7FF?text=Vídeo+03" alt="Vídeo depoimento 3" loading="lazy">
-        <div class="vid-overlay">
-          <button class="play-btn" aria-label="Reproduzir depoimento de Mariana Costa">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="#F0F4FC"><polygon points="5,3 19,12 5,21"/></svg>
-          </button>
-        </div>
-        <span class="vid-badge">▶ Vídeo</span>
-        <div class="vid-info">
-          <div class="vid-name">Mariana Costa</div>
-          <div class="vid-product">Produto C · Cliente há 2 meses</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="vw reveal">
-      <div class="video-card" data-vid="dQw4w9WgXcQ">
-        <img class="vid-thumb" src="https://placehold.co/360x640/08101d/8FB7FF?text=Vídeo+04" alt="Vídeo depoimento 4" loading="lazy">
-        <div class="vid-overlay">
-          <button class="play-btn" aria-label="Reproduzir depoimento de Rafael Oliveira">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="#F0F4FC"><polygon points="5,3 19,12 5,21"/></svg>
-          </button>
-        </div>
-        <span class="vid-badge">▶ Vídeo</span>
-        <div class="vid-info">
-          <div class="vid-name">Rafael Oliveira</div>
-          <div class="vid-product">Produto A · Cliente há 4 meses</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="vw reveal">
-      <div class="video-card" data-vid="dQw4w9WgXcQ">
-        <img class="vid-thumb" src="https://placehold.co/360x640/0d1626/8FB7FF?text=Vídeo+05" alt="Vídeo depoimento 5" loading="lazy">
-        <div class="vid-overlay">
-          <button class="play-btn" aria-label="Reproduzir depoimento de Juliana Ferreira">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="#F0F4FC"><polygon points="5,3 19,12 5,21"/></svg>
-          </button>
-        </div>
-        <span class="vid-badge">▶ Vídeo</span>
-        <div class="vid-info">
-          <div class="vid-name">Juliana Ferreira</div>
-          <div class="vid-product">Produto B · Cliente há 5 meses</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="vw reveal">
-      <div class="video-card" data-vid="dQw4w9WgXcQ">
-        <img class="vid-thumb" src="https://placehold.co/360x640/08101d/8FB7FF?text=Vídeo+06" alt="Vídeo depoimento 6" loading="lazy">
-        <div class="vid-overlay">
-          <button class="play-btn" aria-label="Reproduzir depoimento de Pedro Alves">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="#F0F4FC"><polygon points="5,3 19,12 5,21"/></svg>
-          </button>
-        </div>
-        <span class="vid-badge">▶ Vídeo</span>
-        <div class="vid-info">
-          <div class="vid-name">Pedro Alves</div>
-          <div class="vid-product">Produto C · Cliente há 7 meses</div>
+          <div class="vid-name">Depoimento de cliente</div>
+          <div class="vid-product">Atendimento da Aissa e entrega segura</div>
         </div>
       </div>
     </div>
 
   </div>
-</section>
-
-<!-- CAROUSEL SECTION -->
-<section class="sec-carousel" id="carousel">
-  <p class="eyebrow reveal">DESTAQUES</p>
-  <h2 class="section-title reveal">Os favoritos dos nossos clientes.</h2>
-
-  <div class="carousel-wrap">
-    <div class="carousel-track" id="carouselTrack">
-
-      <div class="cc">
-        <img class="cc-img" src="https://placehold.co/420x220/08101d/8FB7FF?text=Destaque+01" alt="Destaque 1">
-        <div class="cc-body">
-          <div class="cc-stars">⭐⭐⭐⭐⭐</div>
-          <span class="cc-q-mark">"</span>
-          <p class="cc-quote">Nunca imaginei resultados tão rápidos. Em menos de 30 dias, minha vida mudou completamente. A Zentra é diferente de tudo que já experimentei.</p>
-          <div class="cc-name">Maria Silva</div>
-          <div class="cc-tag">Cliente há 4 meses</div>
-        </div>
-      </div>
-
-      <div class="cc">
-        <img class="cc-img" src="https://placehold.co/420x220/0d1626/8FB7FF?text=Destaque+02" alt="Destaque 2">
-        <div class="cc-body">
-          <div class="cc-stars">⭐⭐⭐⭐⭐</div>
-          <span class="cc-q-mark">"</span>
-          <p class="cc-quote">Comprei com desconfiança, mas os resultados falaram por si. O atendimento foi impecável do começo ao fim. Recomendo de olhos fechados.</p>
-          <div class="cc-name">João Pereira</div>
-          <div class="cc-tag">Cliente há 6 meses</div>
-        </div>
-      </div>
-
-      <div class="cc">
-        <img class="cc-img" src="https://placehold.co/420x220/08101d/8FB7FF?text=Destaque+03" alt="Destaque 3">
-        <div class="cc-body">
-          <div class="cc-stars">⭐⭐⭐⭐⭐</div>
-          <span class="cc-q-mark">"</span>
-          <p class="cc-quote">Produto de qualidade absurda. Já tentei várias marcas e nenhuma chegou perto. A fórmula da Zentra é simplesmente superior. Indiquei para toda minha família.</p>
-          <div class="cc-name">Ana Costa</div>
-          <div class="cc-tag">Cliente há 8 meses</div>
-        </div>
-      </div>
-
-      <div class="cc">
-        <img class="cc-img" src="https://placehold.co/420x220/0d1626/8FB7FF?text=Destaque+04" alt="Destaque 4">
-        <div class="cc-body">
-          <div class="cc-stars">⭐⭐⭐⭐⭐</div>
-          <span class="cc-q-mark">"</span>
-          <p class="cc-quote">O que mais me surpreendeu foi a velocidade. Segui as orientações à risca e em 3 semanas já via diferença real. Simplesmente incrível!</p>
-          <div class="cc-name">Carlos Mendes</div>
-          <div class="cc-tag">Cliente há 2 meses</div>
-        </div>
-      </div>
-
-      <div class="cc">
-        <img class="cc-img" src="https://placehold.co/420x220/08101d/8FB7FF?text=Destaque+05" alt="Destaque 5">
-        <div class="cc-body">
-          <div class="cc-stars">⭐⭐⭐⭐⭐</div>
-          <span class="cc-q-mark">"</span>
-          <p class="cc-quote">Minha terceira compra e continuo amando cada detalhe. Entrega rápida, produto exatamente como descrito, resultado surreal. Zentra é top!</p>
-          <div class="cc-name">Fernanda Lima</div>
-          <div class="cc-tag">Cliente há 1 ano</div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="carousel-controls">
-      <button class="caro-btn" id="caroPrev" aria-label="Anterior">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
-      <div class="dots" id="caroDots"></div>
-      <button class="caro-btn" id="caroNext" aria-label="Próximo">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
-    </div>
-  </div>
-</section>
-
-<!-- CTA SECTION -->
-<section class="sec-cta" id="cta">
-  <div class="cta-blob"></div>
-  <h2 class="reveal">Pronto para viver seu<br>próprio resultado?</h2>
-  <p class="cta-sub reveal">Junte-se a mais de 500 clientes que já transformaram suas vidas com a Zentra Pharma.</p>
-  <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="cta-btn reveal">Falar com a Zentra</a>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  Zentra Pharma &copy; 2025 &middot; Todos os direitos reservados
+  Zenthra Pharma &copy; 2025 &middot; Desenvolvido por Nicolas Dev
 </footer>
 
 <!-- LIGHTBOX -->
@@ -1148,7 +1117,7 @@ footer {
   let cx = 0, cy = 0, tx = 0, ty = 0, curRaf;
   if (window.innerWidth > 768) {
     document.addEventListener('mousemove', e => { tx = e.clientX; ty = e.clientY; });
-    document.querySelectorAll('.photo-card,.video-card,.cc,.cta-btn,.caro-btn,.pill').forEach(el => {
+    document.querySelectorAll('.photo-card,.video-card').forEach(el => {
       el.addEventListener('mouseenter', () => cur.classList.add('big'));
       el.addEventListener('mouseleave', () => cur.classList.remove('big'));
     });
@@ -1212,36 +1181,7 @@ footer {
   }, { threshold: 0.6 });
   if (countersEl) cObs.observe(countersEl);
 
-  /* ── FILTER PILLS ── */
-  const pills = document.querySelectorAll('.pill');
   const photoCards = document.querySelectorAll('.photo-card');
-  pills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      pills.forEach(p => p.classList.remove('on'));
-      pill.classList.add('on');
-      const f = pill.dataset.filter;
-      let vi = 0;
-      photoCards.forEach(card => {
-        const match = f === 'todos' || card.dataset.cat === f;
-        if (match) {
-          card.style.display = '';
-          card.style.opacity = '0';
-          card.style.transform = 'scale(.94)';
-          const delay = vi++ * 55;
-          setTimeout(() => {
-            card.style.transition = 'opacity .35s ease,transform .35s ease';
-            card.style.opacity = '1';
-            card.style.transform = 'scale(1)';
-          }, delay);
-        } else {
-          card.style.transition = 'opacity .25s ease,transform .25s ease';
-          card.style.opacity = '0';
-          card.style.transform = 'scale(.94)';
-          setTimeout(() => { card.style.display = 'none'; }, 270);
-        }
-      });
-    });
-  });
 
   /* ── LIGHTBOX ── */
   const lb = document.getElementById('lb');
@@ -1254,7 +1194,7 @@ footer {
   let lbCards = [];
 
   function getVisible() {
-    return [...photoCards].filter(c => c.style.display !== 'none');
+    return [...photoCards].filter(c => c.style.display !== 'none' && c.querySelector('img'));
   }
   function openLb(idx) {
     lbCards = getVisible();
@@ -1277,6 +1217,7 @@ footer {
 
   photoCards.forEach((card) => {
     card.addEventListener('click', () => {
+      if (!card.querySelector('img')) return;
       lbCards = getVisible();
       const idx = lbCards.indexOf(card);
       openLb(idx >= 0 ? idx : 0);
@@ -1294,8 +1235,8 @@ footer {
   const vmodClose = document.getElementById('vmodClose');
   const vmodFrame = document.getElementById('vmodFrame');
 
-  function openVmod(vid) {
-    vmodFrame.innerHTML = `<iframe src="https://www.youtube.com/embed/${vid}?autoplay=1&rel=0" allow="autoplay;fullscreen" allowfullscreen></iframe>`;
+  function openVmod(src) {
+    vmodFrame.innerHTML = `<video src="${src}" controls autoplay playsinline></video>`;
     vmod.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
@@ -1306,7 +1247,7 @@ footer {
   }
 
   document.querySelectorAll('.video-card').forEach(card => {
-    card.addEventListener('click', () => openVmod(card.dataset.vid));
+    card.addEventListener('click', () => openVmod(card.dataset.src));
   });
   vmodClose.addEventListener('click', closeVmod);
   vmodOv.addEventListener('click', closeVmod);
@@ -1319,44 +1260,6 @@ footer {
       if (e.key === 'ArrowRight') { lbIdx = (lbIdx + 1) % lbCards.length; showLbImg(); }
     }
     if (vmod.classList.contains('open') && e.key === 'Escape') closeVmod();
-  });
-
-  /* ── CAROUSEL ── */
-  const track = document.getElementById('carouselTrack');
-  const dotsEl = document.getElementById('caroDots');
-  const prevBtn = document.getElementById('caroPrev');
-  const nextBtn = document.getElementById('caroNext');
-  const ccCards = document.querySelectorAll('.cc');
-
-  ccCards.forEach((_, i) => {
-    const d = document.createElement('div');
-    d.className = 'dot' + (i === 0 ? ' on' : '');
-    d.addEventListener('click', () => scrollTo(i));
-    dotsEl.appendChild(d);
-  });
-
-  function scrollTo(idx) {
-    const card = ccCards[idx];
-    if (!card) return;
-    track.scrollTo({ left: card.offsetLeft - 48, behavior: 'smooth' });
-  }
-  function updateDots() {
-    const w = ccCards[0] ? ccCards[0].offsetWidth + 22 : 442;
-    const active = Math.round(track.scrollLeft / w);
-    document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('on', i === active));
-  }
-  track.addEventListener('scroll', updateDots, { passive: true });
-  prevBtn.addEventListener('click', () => { const w = (ccCards[0]?.offsetWidth||420)+22; track.scrollBy({ left:-w, behavior:'smooth' }); });
-  nextBtn.addEventListener('click', () => { const w = (ccCards[0]?.offsetWidth||420)+22; track.scrollBy({ left:w, behavior:'smooth' }); });
-
-  /* drag */
-  let isDown = false, sx, ss;
-  track.addEventListener('mousedown', e => { isDown=true; sx=e.pageX-track.offsetLeft; ss=track.scrollLeft; track.classList.add('grabbing'); e.preventDefault(); });
-  document.addEventListener('mouseup', () => { isDown=false; track.classList.remove('grabbing'); });
-  document.addEventListener('mousemove', e => {
-    if (!isDown) return;
-    const x = e.pageX - track.offsetLeft;
-    track.scrollLeft = ss - (x - sx) * 1.4;
   });
 
 })();
