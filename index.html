@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Depoimentos — Zenthra Pharma</title>
+<title>Zenthra Pharma</title>
+<link rel="icon" type="image/png" href="logozenthra.PNG">
+<link rel="apple-touch-icon" href="logozenthra.PNG">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500&display=swap');
 
@@ -266,6 +268,16 @@ section { padding: 100px 48px; }
   color: var(--text-primary);
   margin-bottom: 48px;
   text-align: center;
+}
+.video-hint {
+  display: none;
+  position: relative;
+  z-index: 1;
+  margin: -30px auto 22px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 700;
 }
 
 /* ── REVEAL ── */
@@ -688,6 +700,28 @@ footer {
   }
   .vid-name { font-size: 16px; }
   .vid-product { font-size: 11px; }
+  .video-hint { display: block; }
+  .vmod {
+    padding: 58px 14px 22px;
+    align-items: flex-start;
+  }
+  .vmod-wrap {
+    width: min(360px, 92vw);
+  }
+  .vmod-close {
+    top: -46px;
+    right: 0;
+    width: 42px;
+    height: 42px;
+    background: #0B1322;
+    border-color: rgba(255,255,255,.32);
+    color: #FFFFFF;
+    box-shadow: 0 10px 28px rgba(0,0,0,.35);
+  }
+  .vmod-frame {
+    width: 100%;
+    max-height: calc(100vh - 94px);
+  }
   .lb-nav { display:none; }
 }
 </style>
@@ -1142,6 +1176,7 @@ footer {
 
   <p class="eyebrow reveal" style="position:relative;z-index:1">DEPOIMENTOS • VÍDEOS</p>
   <h2 class="section-title reveal" style="position:relative;z-index:1">Veja com seus próprios olhos.</h2>
+  <p class="video-hint reveal">Arraste para o lado para ver mais vídeos.</p>
 
   <div class="video-grid">
 
