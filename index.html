@@ -619,7 +619,19 @@ footer {
   .logo { font-size:16px; }
   .tagline { display:none; }
   section { padding:80px 20px; }
-  .hero { padding:110px 20px 80px; }
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 100px 24px 70px;
+    gap: 40px;
+    text-align: center;
+  }
+  .hero-left { display:flex; flex-direction:column; align-items:center; }
+  .hero-sub { max-width: 100%; }
+  .hero-stats { justify-content:center; }
+  .hero-right { height:340px; width:100%; max-width:320px; margin:0 auto; }
+  .fc1 { width:230px; top:0; left:0; }
+  .fc2 { width:215px; top:120px; right:0; }
+  .fc3 { width:140px; bottom:10px; left:20px; }
   .photo-grid { columns:1; }
   .video-grid { grid-template-columns:1fr; }
   .lb-nav { display:none; }
@@ -1180,7 +1192,7 @@ footer {
   /* ── PARALLAX BLOB ── */
   const blob = document.getElementById('heroBlob');
   window.addEventListener('scroll', () => {
-    if (blob) blob.style.transform = `translateX(-50%) translateY(${window.scrollY * 0.3}px)`;
+    if (blob) blob.style.transform = `translateY(${window.scrollY * 0.3}px)`;
   }, { passive: true });
 
   /* ── REVEAL (IntersectionObserver) ── */
@@ -1197,7 +1209,7 @@ footer {
 
   /* ── COUNTERS ── */
   let counted = false;
-  const countersEl = document.querySelector('.counters');
+  const countersEl = document.querySelector('.hero-stats');
   const cObs = new IntersectionObserver(entries => {
     if (entries[0].isIntersecting && !counted) {
       counted = true;
