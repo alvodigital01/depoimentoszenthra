@@ -732,6 +732,45 @@ footer {
   }
   .lb-nav { display:none; }
 }
+/* Galeria compacta e movimento discreto no computador. */
+@media(min-width:769px){
+  body { cursor:auto; }
+  #cursor { display:none; }
+  .photo-grid { columns:4; column-gap:16px; max-width:1120px; margin:0 auto; }
+  .photo-card { margin-bottom:16px; border-radius:14px; transition:border-color .18s ease, box-shadow .18s ease; }
+  .photo-card:hover { transform:none; box-shadow:0 8px 22px rgba(8,43,75,.10); }
+  .photo-card > img { max-height:340px; }
+  .reveal { opacity:1; transform:none; transition:none; }
+  .hero-blob, .hero-blob-2, .badge-dot, .hero-scroll-btn svg,
+  .float-card, .vw, .lb-inner, .vmod-wrap { animation:none; }
+}
+@media(min-width:769px) and (max-width:1024px){
+  .photo-grid { columns:3; }
+}
+@media(prefers-reduced-motion:reduce){
+  html { scroll-behavior:auto; }
+  *, *::before, *::after { animation:none !important; transition:none !important; }
+  .reveal { opacity:1; transform:none; }
+}
+.photo-card[hidden], #showMorePhotos[hidden] { display:none !important; }
+.photo-more { display:flex; flex-direction:column; align-items:center; gap:14px; margin:36px auto 0; padding-top:28px; border-top:1px solid var(--border); max-width:960px; }
+.photo-more-btn {
+  display:inline-flex; align-items:center; justify-content:center; gap:20px;
+  min-height:50px; padding:13px 22px; border-radius:12px;
+  border:1px solid rgba(8,43,75,.18); background:#fff; color:var(--navy-deep);
+  font:600 14px/1.4 'Inter',sans-serif; cursor:pointer;
+  box-shadow:0 2px 6px rgba(8,43,75,.04);
+  transition:background .18s ease,border-color .18s ease;
+}
+.photo-more-btn:hover { background:#edf5f7; border-color:var(--accent-teal); }
+.photo-more-btn:focus-visible { outline:3px solid var(--accent-teal); outline-offset:4px; }
+.photo-more-btn svg { flex-shrink:0; }
+#photoCount { font-size:12px; line-height:1.5; color:var(--text-muted); text-align:center; }
+#photoCount strong { color:var(--navy-mid); font-weight:600; }
+@media(min-width:769px){
+  .video-grid { grid-template-columns:repeat(3,minmax(0,1fr)); max-width:920px; margin:0 auto; }
+  .photo-grid { columns:3; max-width:960px; }
+}
 </style>
 </head>
 <body>
@@ -784,7 +823,7 @@ footer {
       </div>
     </div>
 
-    <a class="hero-scroll-btn reveal" href="#photos">
+    <a class="hero-scroll-btn reveal" href="#videos">
       Ver depoimentos
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
     </a>
@@ -834,6 +873,68 @@ footer {
   </div>
 </section>
 
+<!-- VIDEOS SECTION -->
+<section class="sec-videos" id="videos">
+  <div class="vid-blob"></div>
+  <div class="vid-grid-bg"></div>
+
+  <p class="eyebrow reveal" style="position:relative;z-index:1">DEPOIMENTOS • VÍDEOS</p>
+  <h2 class="section-title reveal" style="position:relative;z-index:1">Veja com seus próprios olhos.</h2>
+  <p class="video-hint reveal">Arraste para o lado para ver mais vídeos.</p>
+
+  <div class="video-grid">
+
+    <div class="vw reveal">
+      <div class="video-card" data-src="video1.mp4">
+        <video class="vid-thumb" src="video1.mp4" muted playsinline preload="metadata"></video>
+        <div class="vid-overlay">
+          <button class="play-btn" aria-label="Reproduzir depoimento em vídeo 1">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#F0F4FC"><polygon points="5,3 19,12 5,21"/></svg>
+          </button>
+        </div>
+        <span class="vid-badge">▶ Vídeo real</span>
+        <div class="vid-info">
+          <div class="vid-name">Depoimento de cliente</div>
+          <div class="vid-product">Recebimento e confiança na compra</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="vw reveal">
+      <div class="video-card" data-src="video2.mp4">
+        <video class="vid-thumb" src="video2.mp4" muted playsinline preload="metadata"></video>
+        <div class="vid-overlay">
+          <button class="play-btn" aria-label="Reproduzir depoimento em vídeo 2">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#F0F4FC"><polygon points="5,3 19,12 5,21"/></svg>
+          </button>
+        </div>
+        <span class="vid-badge">▶ Vídeo real</span>
+        <div class="vid-info">
+          <div class="vid-name">Depoimento de cliente</div>
+          <div class="vid-product">Atendimento cuidadoso e entrega segura</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="vw reveal">
+      <div class="video-card" data-src="entrega-zenthra.mp4">
+        <video class="vid-thumb" src="entrega-zenthra.mp4" muted playsinline preload="metadata"></video>
+        <div class="vid-overlay">
+          <button class="play-btn" aria-label="Reproduzir vídeo de entrega Zenthra">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#F0F4FC"><polygon points="5,3 19,12 5,21"/></svg>
+          </button>
+        </div>
+        <span class="vid-badge">▶ Entrega</span>
+        <div class="vid-info">
+          <div class="vid-name">Entrega Zenthra</div>
+          <div class="vid-product">Pedido recebido com segurança</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- PHOTOS SECTION -->
 <section class="sec-photos" id="photos">
   <p class="eyebrow reveal">DEPOIMENTOS • FOTOS</p>
@@ -842,86 +943,126 @@ footer {
   <div class="photo-grid" id="photoGrid">
 
     <div class="photo-card reveal" data-cat="whatsapp">
+      <img src="novos%20depo/WhatsApp%20Image%202026-10-13%20at%2015.17.29%20(1).jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
+    </div>
+
+    <div class="photo-card reveal" data-cat="whatsapp">
+      <img src="novos%20depo/WhatsApp%20Image%202026-10-13%20at%2015.17.29%20(2).jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
+    </div>
+
+    <div class="photo-card reveal" data-cat="whatsapp">
+      <img src="novos%20depo/WhatsApp%20Image%202026-10-13%20at%2015.17.29.jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
+    </div>
+
+    <div class="photo-card reveal" data-cat="whatsapp">
+      <img src="novos%20depo/WhatsApp%20Image%202026-10-13%20at%2015.17.30%20(1).jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
+    </div>
+
+    <div class="photo-card reveal" data-cat="whatsapp">
+      <img src="novos%20depo/WhatsApp%20Image%202026-10-13%20at%2015.17.30%20(2).jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
+    </div>
+
+    <div class="photo-card reveal" data-cat="whatsapp">
+      <img src="novos%20depo/WhatsApp%20Image%202026-10-13%20at%2015.17.30%20(3).jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
+    </div>
+
+    <div class="photo-card reveal" data-cat="whatsapp" hidden>
+      <img src="novos%20depo/WhatsApp%20Image%202026-10-13%20at%2015.17.30%20(4).jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
+    </div>
+
+    <div class="photo-card reveal" data-cat="whatsapp" hidden>
+      <img src="novos%20depo/WhatsApp%20Image%202026-10-13%20at%2015.17.30%20(5).jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
+    </div>
+
+    <div class="photo-card reveal" data-cat="whatsapp" hidden>
+      <img src="novos%20depo/WhatsApp%20Image%202026-10-13%20at%2015.17.30.jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
+    </div>
+
+    <div class="photo-card reveal" data-cat="whatsapp" hidden>
+      <img src="novos%20depo/WhatsApp%20Image%202026-10-13%20at%2015.17.31.jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
+    </div>
+
+    <div class="photo-card reveal" data-cat="whatsapp" hidden>
       <img src="WhatsApp Image 2026-07-02 at 13.54.24.jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
     </div>
 
-    <div class="photo-card reveal" data-cat="whatsapp">
+    <div class="photo-card reveal" data-cat="whatsapp" hidden>
       <img src="WhatsApp Image 2026-07-02 at 13.54.26 (1).jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
     </div>
 
-    <div class="photo-card reveal" data-cat="whatsapp">
+    <div class="photo-card reveal" data-cat="whatsapp" hidden>
       <img src="WhatsApp Image 2026-07-02 at 13.54.26 (2).jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
     </div>
 
-    <div class="photo-card reveal" data-cat="whatsapp">
+    <div class="photo-card reveal" data-cat="whatsapp" hidden>
       <img src="WhatsApp Image 2026-07-02 at 13.54.26.jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
     </div>
 
-    <div class="photo-card reveal" data-cat="whatsapp">
+    <div class="photo-card reveal" data-cat="whatsapp" hidden>
       <img src="WhatsApp Image 2026-07-02 at 13.54.27.jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
     </div>
 
-    <div class="photo-card reveal" data-cat="whatsapp">
+    <div class="photo-card reveal" data-cat="whatsapp" hidden>
       <img src="WhatsApp Image 2026-07-02 at 13.54.28 (1).jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
     </div>
 
-    <div class="photo-card reveal" data-cat="whatsapp">
+    <div class="photo-card reveal" data-cat="whatsapp" hidden>
       <img src="WhatsApp Image 2026-07-02 at 13.54.28.jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
     </div>
 
-    <div class="photo-card reveal" data-cat="whatsapp">
+    <div class="photo-card reveal" data-cat="whatsapp" hidden>
       <img src="WhatsApp Image 2026-07-02 at 13.54.29 (1).jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
     </div>
 
-    <div class="photo-card reveal" data-cat="whatsapp">
+    <div class="photo-card reveal" data-cat="whatsapp" hidden>
       <img src="WhatsApp Image 2026-07-02 at 13.54.29 (2).jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
     </div>
 
-    <div class="photo-card reveal" data-cat="whatsapp">
+    <div class="photo-card reveal" data-cat="whatsapp" hidden>
       <img src="WhatsApp Image 2026-07-02 at 13.54.29.jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
     </div>
 
-    <div class="photo-card reveal" data-cat="whatsapp">
+    <div class="photo-card reveal" data-cat="whatsapp" hidden>
       <img src="WhatsApp Image 2026-07-02 at 13.54.31.jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
     </div>
 
-    <div class="photo-card reveal" data-cat="whatsapp">
+    <div class="photo-card reveal" data-cat="whatsapp" hidden>
       <img src="WhatsApp Image 2026-07-02 at 13.54.32.jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
     </div>
 
-    <div class="photo-card reveal" data-cat="whatsapp">
+    <div class="photo-card reveal" data-cat="whatsapp" hidden>
       <img src="WhatsApp Image 2026-07-02 at 13.54.34.jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
     </div>
 
-    <div class="photo-card reveal" data-cat="whatsapp">
+    <div class="photo-card reveal" data-cat="whatsapp" hidden>
       <img src="WhatsApp Image 2026-07-02 at 13.54.36 (1).jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
     </div>
 
-    <div class="photo-card reveal" data-cat="whatsapp">
+    <div class="photo-card reveal" data-cat="whatsapp" hidden>
       <img src="WhatsApp Image 2026-07-02 at 13.54.36.jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
     </div>
 
-    <div class="photo-card reveal" data-cat="whatsapp">
+    <div class="photo-card reveal" data-cat="whatsapp" hidden>
       <img src="WhatsApp Image 2026-07-02 at 13.54.37 (1).jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
     </div>
 
-    <div class="photo-card reveal" data-cat="whatsapp">
+    <div class="photo-card reveal" data-cat="whatsapp" hidden>
       <img src="WhatsApp Image 2026-07-02 at 13.54.37.jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
     </div>
 
-    <div class="photo-card reveal" data-cat="whatsapp">
+    <div class="photo-card reveal" data-cat="whatsapp" hidden>
       <img src="WhatsApp Image 2026-07-02 at 13.54.38.jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
     </div>
 
-    <div class="photo-card reveal" data-cat="whatsapp">
+    <div class="photo-card reveal" data-cat="whatsapp" hidden>
       <img src="WhatsApp Image 2026-07-02 at 13.54.39 (1).jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
     </div>
 
-    <div class="photo-card reveal" data-cat="whatsapp">
+    <div class="photo-card reveal" data-cat="whatsapp" hidden>
       <img src="WhatsApp Image 2026-07-02 at 13.54.39 (2).jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
     </div>
 
-    <div class="photo-card reveal" data-cat="whatsapp">
+    <div class="photo-card reveal" data-cat="whatsapp" hidden>
       <img src="WhatsApp Image 2026-07-02 at 13.54.39.jpeg" alt="Print real de depoimento de cliente Zenthra no WhatsApp" loading="lazy">
     </div>
 
@@ -1259,67 +1400,9 @@ footer {
     </div>
 
   </div>
-</section>
-
-<!-- VIDEOS SECTION -->
-<section class="sec-videos" id="videos">
-  <div class="vid-blob"></div>
-  <div class="vid-grid-bg"></div>
-
-  <p class="eyebrow reveal" style="position:relative;z-index:1">DEPOIMENTOS • VÍDEOS</p>
-  <h2 class="section-title reveal" style="position:relative;z-index:1">Veja com seus próprios olhos.</h2>
-  <p class="video-hint reveal">Arraste para o lado para ver mais vídeos.</p>
-
-  <div class="video-grid">
-
-    <div class="vw reveal">
-      <div class="video-card" data-src="video1.mp4">
-        <video class="vid-thumb" src="video1.mp4" muted playsinline preload="metadata"></video>
-        <div class="vid-overlay">
-          <button class="play-btn" aria-label="Reproduzir depoimento em vídeo 1">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="#F0F4FC"><polygon points="5,3 19,12 5,21"/></svg>
-          </button>
-        </div>
-        <span class="vid-badge">▶ Vídeo real</span>
-        <div class="vid-info">
-          <div class="vid-name">Depoimento de cliente</div>
-          <div class="vid-product">Recebimento e confiança na compra</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="vw reveal">
-      <div class="video-card" data-src="video2.mp4">
-        <video class="vid-thumb" src="video2.mp4" muted playsinline preload="metadata"></video>
-        <div class="vid-overlay">
-          <button class="play-btn" aria-label="Reproduzir depoimento em vídeo 2">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="#F0F4FC"><polygon points="5,3 19,12 5,21"/></svg>
-          </button>
-        </div>
-        <span class="vid-badge">▶ Vídeo real</span>
-        <div class="vid-info">
-          <div class="vid-name">Depoimento de cliente</div>
-          <div class="vid-product">Atendimento cuidadoso e entrega segura</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="vw reveal">
-      <div class="video-card" data-src="entrega-zenthra.mp4">
-        <video class="vid-thumb" src="entrega-zenthra.mp4" muted playsinline preload="metadata"></video>
-        <div class="vid-overlay">
-          <button class="play-btn" aria-label="Reproduzir vídeo de entrega Zenthra">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="#F0F4FC"><polygon points="5,3 19,12 5,21"/></svg>
-          </button>
-        </div>
-        <span class="vid-badge">▶ Entrega</span>
-        <div class="vid-info">
-          <div class="vid-name">Entrega Zenthra</div>
-          <div class="vid-product">Pedido recebido com segurança</div>
-        </div>
-      </div>
-    </div>
-
+  <div class="photo-more">
+    <button class="photo-more-btn" id="showMorePhotos" type="button" aria-controls="photoGrid"><span>Ver mais depoimentos</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+    <p id="photoCount" role="status" aria-live="polite"></p>
   </div>
 </section>
 
@@ -1358,47 +1441,11 @@ footer {
 (function () {
   'use strict';
 
-  /* ── CURSOR ── */
-  const cur = document.getElementById('cursor');
-  let cx = 0, cy = 0, tx = 0, ty = 0, curRaf;
-  if (window.innerWidth > 768) {
-    document.addEventListener('mousemove', e => { tx = e.clientX; ty = e.clientY; });
-    document.querySelectorAll('.photo-card,.video-card').forEach(el => {
-      el.addEventListener('mouseenter', () => cur.classList.add('big'));
-      el.addEventListener('mouseleave', () => cur.classList.remove('big'));
-    });
-    function tickCursor() {
-      cx += (tx - cx) * 0.14;
-      cy += (ty - cy) * 0.14;
-      cur.style.transform = `translate(${cx}px,${cy}px) translate(-50%,-50%)`;
-      curRaf = requestAnimationFrame(tickCursor);
-    }
-    tickCursor();
-  }
-
-  /* ── PARTICLES ── */
-  const hero = document.getElementById('hero');
-  for (let i = 0; i < 30; i++) {
-    const p = document.createElement('div');
-    p.className = 'particle';
-    const dur = 6 + Math.random() * 8;
-    p.style.cssText = `left:${Math.random()*100}%;top:${10+Math.random()*80}%;animation-duration:${dur}s;animation-delay:${-(Math.random()*dur)}s;opacity:${.15+Math.random()*.25}`;
-    hero.appendChild(p);
-  }
-
-  /* ── PARALLAX BLOB ── */
-  const blob = document.getElementById('heroBlob');
-  window.addEventListener('scroll', () => {
-    if (blob) blob.style.transform = `translateY(${window.scrollY * 0.3}px)`;
-  }, { passive: true });
-
   /* ── REVEAL (IntersectionObserver) ── */
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (!e.isIntersecting) return;
-      const siblings = [...(e.target.parentElement || document.body).querySelectorAll('.reveal')];
-      const idx = siblings.indexOf(e.target);
-      setTimeout(() => e.target.classList.add('in'), Math.max(0, idx) * 75);
+      e.target.classList.add('in');
       obs.unobserve(e.target);
     });
   }, { threshold: 0.1 });
@@ -1429,6 +1476,29 @@ footer {
 
   const photoCards = document.querySelectorAll('.photo-card');
 
+  const galleryPhotos = [...photoCards].filter(card => card.querySelector(':scope > img'));
+  const showMorePhotos = document.getElementById('showMorePhotos');
+  const photoCount = document.getElementById('photoCount');
+  function updatePhotoCount() {
+    const visibleCount = galleryPhotos.filter(card => !card.hidden).length;
+    photoCount.innerHTML = `<strong>${visibleCount}</strong> de ${galleryPhotos.length} depoimentos`;
+    showMorePhotos.hidden = visibleCount === galleryPhotos.length;
+  }
+  showMorePhotos.addEventListener('click', () => {
+    const nextPhotos = galleryPhotos.filter(card => card.hidden).slice(0, 6);
+    nextPhotos.forEach(card => {
+      card.hidden = false;
+      card.classList.add('in');
+    });
+    updatePhotoCount();
+    if (showMorePhotos.hidden && nextPhotos.length) {
+      nextPhotos[0].tabIndex = -1;
+      nextPhotos[0].focus({ preventScroll: true });
+    }
+  });
+  updatePhotoCount();
+
+
   /* ── LIGHTBOX ── */
   const lb = document.getElementById('lb');
   const lbImg = document.getElementById('lbImg');
@@ -1440,7 +1510,7 @@ footer {
   let lbCards = [];
 
   function getVisible() {
-    return [...photoCards].filter(c => c.style.display !== 'none' && c.querySelector(':scope > img'));
+    return [...photoCards].filter(c => !c.hidden && c.style.display !== 'none' && c.querySelector(':scope > img'));
   }
   function openLb(idx) {
     lbCards = getVisible();
